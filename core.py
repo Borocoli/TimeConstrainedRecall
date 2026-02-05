@@ -135,22 +135,3 @@ class App:
             r = con.execute(st, d)
             con.commit() 
 
-if __name__ == '__main__':
-    #a = App('sqlite+pysqlite:///:memory:', 2)
-    a = App('sqlite+pysqlite:///test.sqlite', 2)
-
-    a.c('T1', ['o1', 'o2'], 1)
-    a.c('T2', ['o1', 'o2'], 1)
-    a.c('T3', ['o1', 'o2'], 1)
-    a.c('T4', ['o1', 'o2'], 1)
-
-    print(a.table)
-    #a.u(3, correct = 0)
-    a.feedback({1:0, 2:1})
-    a.feedback({1:0, 3:1})
-    a.feedback({1:1, 2:1})
-
-    r = a.quizz(4)
-    #print(r)
-    #a.d([3])
-    #print(a.ids)
